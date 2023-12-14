@@ -1,9 +1,11 @@
-// RootLayout.tsx
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link"; // Changed the import
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +25,10 @@ export default function RootLayout({
         <nav className="navbar">
           {/* Logo */}
           <div className="logo-container">
-            <img src="" alt="Logo" className="h-8 w-8" />
+            <img
+              src="logo/u-slast-high-resolution-logo-transparent.png"
+              alt="Logo"
+            />
           </div>
 
           {/* Navigation Links */}
@@ -38,21 +43,58 @@ export default function RootLayout({
               <Link href="/menu">Menu</Link>
             </li>
             <li>
-              <Link
-                href="/review?_page=1&_limit=10"
-                className="text-white hover:underline"
-              >
-                Review
-              </Link>
+              <Link href="/review?_page=1&_limit=10">Review</Link>
             </li>
           </ul>
         </nav>
 
         {children}
-        {/* <footer>
-          <p className='centered-content'>Vana Gaćeša & Šime Parać</p>
-          <p className='centered-content'>2023 FESB</p>
-        </footer> */}
+        <footer>
+          <div className="footer-contact-container">
+            <div className="contact">
+              <FontAwesomeIcon
+                icon={faPhone}
+                size="2x"
+                style={{ color: "#070505" }}
+              />
+              <p>+385 91 5234 322</p>
+            </div>
+            <div className="contact">
+              <FontAwesomeIcon
+                icon={faInstagram}
+                size="2x"
+                style={{ color: "#070505" }}
+              />
+              <p>@restaurantUSlast</p>
+            </div>
+          </div>
+          <div className="footer-links">
+            <ul className="links">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/reserve">Reserve</Link>
+              </li>
+              <li>
+                <Link href="/menu">Menu</Link>
+              </li>
+              <li>
+                <Link href="/review?_page=1&_limit=10">Review</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-info">
+            <div className="info">
+              <h2>LOCATION: </h2>
+              <p>Dioklecijanova 23, Split</p>
+            </div>
+            <div className="info">
+              <h2>WORKING HOURS:: </h2>
+              <p>16:00-02:00</p>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
