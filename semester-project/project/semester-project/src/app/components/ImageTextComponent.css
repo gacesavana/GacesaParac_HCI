@@ -76,4 +76,7 @@
     .text-container a {
         font-size: 1.5rem;
     }
+    .image-text-container.reverse {
+        flex-direction: column;
+      }
 }

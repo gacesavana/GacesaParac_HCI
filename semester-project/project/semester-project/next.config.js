@@ -5,3 +5,7 @@ module.exports = nextConfig
 
 const withFonts = require('next-fonts');
 
+module.exports = {
+    swcMinify: false,
+  };
+  
