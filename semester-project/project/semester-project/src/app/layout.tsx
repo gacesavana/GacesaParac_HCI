@@ -26,7 +26,7 @@ export default function RootLayout({
           {/* Logo */}
           <div className="logo-container">
             <img
-              src="logo/u-slast-high-resolution-logo-transparent.png"
+              src="/logo/u-slast-high-resolution-logo-transparent.png"
               alt="Logo"
             />
           </div>
