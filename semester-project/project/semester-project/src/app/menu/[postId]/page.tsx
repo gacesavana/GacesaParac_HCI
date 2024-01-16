@@ -38,7 +38,7 @@ export default function Ingredients({
         />
       </div>
       <h1 className="text-3xl font-bold pt-10 capitalize text-[#FFFFFF]">
-        Ingredients in "{meal.name}"
+        Ingredients in {meal.name}
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 md:gap-8 px-4 sm:px-10 lg:px-20 py-4 md:py-10 ">
