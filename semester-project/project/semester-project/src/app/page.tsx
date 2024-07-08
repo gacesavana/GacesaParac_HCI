@@ -24,7 +24,7 @@ export default function Home() {
           description="Embark on a culinary odyssey and join us at our esteemed restaurant,
            located at Dioklecijanova 23, Split, where every dish tells a story, and each 
            visit promises an unforgettable gastronomic experience."
-          imageUrl="/img/plate2.webp"          
+          imageUrl="/img/plate2.webp"
         />{" "}
       </div>
     </div>

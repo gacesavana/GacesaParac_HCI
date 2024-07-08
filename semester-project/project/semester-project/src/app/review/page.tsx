@@ -1,13 +1,20 @@
 "use client";
 import { useState, useEffect } from "react";
-import { fetchReviews, saveReview } from "@/lib/contentful"; // Adjust the import path as needed
+import { fetchReviews } from "@/lib/contentful"; // Adjust the import path as needed
 
-export default function Review() {
-  const [reviews, setReviews] = useState([]);
-  const [formData, setFormData] = useState({
+interface Review {
+  name: string;
+  email: string;
+  rating: number;
+  comment: string;
+}
+
+export default function ReviewPage() {
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [formData, setFormData] = useState<Review>({
     name: "",
     email: "",
-    rating: "",
+    rating: 1, // default rating to 1
     comment: "",
   });
 
@@ -19,26 +26,24 @@ export default function Review() {
     getReviews();
   }, []);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [name]: name === "rating" ? parseInt(value) : value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      await saveReview(formData);
-      setFormData({
-        name: "",
-        email: "",
-        rating: "",
-        comment: "",
-      });
-      const allReviews = await fetchReviews();
-      setReviews(allReviews);
-    } catch (error) {
-      console.error("Error saving review:", error);
-    }
+    // Code to handle form submission without saving the review
+    console.log("Form data submitted:", formData);
+    setFormData({
+      name: "",
+      email: "",
+      rating: 1, // reset to default rating
+      comment: "",
+    });
+    // Refresh the reviews after form submission
+    const allReviews = await fetchReviews();
+    setReviews(allReviews);
   };
 
   return (

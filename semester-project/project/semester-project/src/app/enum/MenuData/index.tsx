@@ -19,7 +19,7 @@ const menuData = [
       },
       {
         id: 4,
-        name: "Mozzarella and Parmesan cheeses",        
+        name: "Mozzarella and Parmesan cheeses",
       },
     ],
   },

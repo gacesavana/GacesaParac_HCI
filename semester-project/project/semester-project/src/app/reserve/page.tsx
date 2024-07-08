@@ -14,12 +14,12 @@ const initialFormData = {
 export default function Reserve() {
   const [formData, setFormData] = useState(initialFormData);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission logic (e.g., send data to API, show confirmation)
     console.log("Form data submitted:", formData);
@@ -103,7 +103,10 @@ export default function Reserve() {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-bold mb-2" htmlFor="specialRequests">
+          <label
+            className="block text-sm font-bold mb-2"
+            htmlFor="specialRequests"
+          >
             Special Requests
           </label>
           <textarea
