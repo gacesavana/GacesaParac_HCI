@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { fetchReviews } from "@/lib/contentful"; // Adjust the import path as needed
 
@@ -17,6 +18,7 @@ export default function ReviewPage() {
     rating: 1, // default rating to 1
     comment: "",
   });
+  const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
 
   useEffect(() => {
     async function getReviews() {
@@ -40,12 +42,23 @@ export default function ReviewPage() {
     e.preventDefault();
     // Code to handle form submission without saving the review
     console.log("Form data submitted:", formData);
+
+    // Show feedback message
+    setFeedbackMessage("Your review has been successfully submitted.");
+
+    // Clear form data
     setFormData({
       name: "",
       email: "",
       rating: 1, // reset to default rating
       comment: "",
     });
+
+    // Clear feedback message after 3 seconds
+    setTimeout(() => {
+      setFeedbackMessage(null);
+    }, 3000);
+
     // Refresh the reviews after form submission
     const allReviews = await fetchReviews();
     setReviews(allReviews);
@@ -54,6 +67,13 @@ export default function ReviewPage() {
   return (
     <div className="flex flex-col items-center min-h-screen max-w-5xl m-auto p-10 bg-[#070505] text-white">
       <h1 className="text-3xl font-bold p-10">Reviews</h1>
+
+      {feedbackMessage && (
+        <div className="mb-4 p-4 w-full max-w-lg text-center text-white bg-green-500 rounded">
+          {feedbackMessage}
+        </div>
+      )}
+
       <form className="w-full max-w-lg" onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="name">
@@ -119,6 +139,7 @@ export default function ReviewPage() {
           Submit
         </button>
       </form>
+
       <div className="w-full mt-10">
         {reviews.length === 0 ? (
           <p>No reviews available.</p>
