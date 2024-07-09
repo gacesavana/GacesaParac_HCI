@@ -1,9 +1,11 @@
 "use client";
+
 import Link from "next/link";
-import menuData from "@/app/enum/MenuData";
+import menuData from "@/app/enum/MenuData"; // Adjust import path as needed
 import Image from "next/image";
 import { useState } from "react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 export default function MenuData() {
   const [search, setSearch] = useState("");
 
@@ -14,13 +16,19 @@ export default function MenuData() {
   return (
     <main className="flex flex-col items-center bg-[#070505] text-white">
       <div className="flex flex-col pt-4 md:p-12">
-        <form>
-          <input
-            className="w-96 md:w-1/2 flex items-center p-2 rounded-xl mx-auto text-black mt-10 mb-12 md:mb-24 outline-none"
-            placeholder="Search for dinner (e.g. Epic Crispy Quinoa Burgers)"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          ></input>
+        <form className="relative w-96 md:w-1/2 mx-auto">
+          <div className="relative">
+            <input
+              className="w-full flex items-center p-2 rounded-xl text-black mt-10 mb-12 md:mb-24 outline-none pl-10"
+              placeholder="Search for dinner (e.g. Epic Crispy Quinoa Burgers)"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none"
+            />
+          </div>
         </form>
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-3 md:gap-6 mx-5">
           {filteredmenuData.map((menuData) => (
