@@ -149,6 +149,30 @@ footer {
   .navbar .nav-links {
     flex-direction: column;
     gap: 10px;
+    width: 100%;
+    /* Ensure links take full width */
+  }
+
+  .navbar .nav-links li {
+    margin-right: 0;
+    /* Remove margin-right */
+    width: 100%;
+    /* Make each list item take full width */
+  }
+
+  .navbar .nav-links a {
+    display: block;
+    /* Change display to block to take full width */
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .navbar .nav-links a:hover {
+    background-color: var(--secondary-color-dark);
   }
 
   .home-background-pic h2 {
