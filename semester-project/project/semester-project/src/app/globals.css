@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -75,6 +74,11 @@ body {
   background-color: var(--secondary-color-dark);
 }
 
+.navbar .nav-links a.bg-secondary-color-dark {
+  background-color: var(--secondary-color-dark);
+  text-decoration: underline;
+}
+
 /* Background picture */
 .home-background-pic h2 {
   font-family: 'Pacifico', cursive;
@@ -93,7 +97,6 @@ body {
   width: 100%;
   height: auto;
 }
-
 
 /* Footer */
 footer {

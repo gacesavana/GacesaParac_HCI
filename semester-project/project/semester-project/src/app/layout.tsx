@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import NavLink from "@/app/components/NavLink"; // Correct import of NavLink component
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,16 +35,16 @@ export default function RootLayout({
           {/* Navigation Links */}
           <ul className="nav-links">
             <li>
-              <Link href="/">Home</Link>
+              <NavLink href="/">Home</NavLink>
             </li>
             <li>
-              <Link href="/reserve">Reserve</Link>
+              <NavLink href="/reserve">Reserve</NavLink>
             </li>
             <li>
-              <Link href="/menu">Menu</Link>
+              <NavLink href="/menu">Menu</NavLink>
             </li>
             <li>
-              <Link href="/review?_page=1&_limit=10">Review</Link>
+              <NavLink href="/review?_page=1&_limit=10">Review</NavLink>
             </li>
           </ul>
         </nav>
@@ -71,16 +72,16 @@ export default function RootLayout({
           <div className="footer-links">
             <ul className="links">
               <li>
-                <Link href="/">Home</Link>
+                <NavLink href="/">Home</NavLink>
               </li>
               <li>
-                <Link href="/reserve">Reserve</Link>
+                <NavLink href="/reserve">Reserve</NavLink>
               </li>
               <li>
-                <Link href="/menu">Menu</Link>
+                <NavLink href="/menu">Menu</NavLink>
               </li>
               <li>
-                <Link href="/review?_page=1&_limit=10">Review</Link>
+                <NavLink href="/review?_page=1&_limit=10">Review</NavLink>
               </li>
             </ul>
           </div>
@@ -90,7 +91,7 @@ export default function RootLayout({
               <p>Dioklecijanova 23, Split</p>
             </div>
             <div className="info">
-              <h2>WORKING HOURS:: </h2>
+              <h2>WORKING HOURS: </h2>
               <p>16:00-02:00</p>
             </div>
           </div>
