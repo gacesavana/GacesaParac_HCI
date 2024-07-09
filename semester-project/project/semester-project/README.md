@@ -2,6 +2,9 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## NOTION DOCUMENT:
+https://accessible-position-6cc.notion.site/U-Slast-6db20520c7c44ab19296ccd646180102?pvs=4
+
 ## Getting Started
 
 First, run the development server:
