@@ -72,16 +72,16 @@ export default function RootLayout({
           <div className="footer-links">
             <ul className="links">
               <li>
-                <NavLink href="/">Home</NavLink>
+                <NavLink href="/" className="footer-link">Home</NavLink>
               </li>
               <li>
-                <NavLink href="/reserve">Reserve</NavLink>
+                <NavLink href="/reserve" className="footer-link">Reserve</NavLink>
               </li>
               <li>
-                <NavLink href="/menu">Menu</NavLink>
+                <NavLink href="/menu" className="footer-link">Menu</NavLink>
               </li>
               <li>
-                <NavLink href="/review?_page=1&_limit=10">Review</NavLink>
+                <NavLink href="/review?_page=1&_limit=10" className="footer-link">Review</NavLink>
               </li>
             </ul>
           </div>

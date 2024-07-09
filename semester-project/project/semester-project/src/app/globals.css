@@ -129,6 +129,17 @@ footer {
   padding: 15px;
 }
 
+.footer-link {
+  color: var(--background-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer-link-active {
+  text-decoration: underline;
+}
+
+
 .contact {
   display: flex;
   justify-content: space-between;
