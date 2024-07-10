@@ -1,4 +1,3 @@
-link: https://gacesa-parac.vercel.app
  
  # Semester Project Template <!-- omit in toc -->
 
